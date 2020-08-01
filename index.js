@@ -2,13 +2,19 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 const docs = require('./GoogleDocs/docs');
-const SCOPES = ['https://www.googleapis.com/auth/documents'];
+const spreadsheets = require('./GoogleSpreadsheets/spreadsheets');
+const SCOPES = [
+    'https://www.googleapis.com/auth/documents',
+    'https://www.googleapis.com/auth/spreadsheets'
+];
+// Visit https://developers.google.com/identity/protocols/oauth2/scopes for a full list of possible scopes.
 const TOKEN_PATH = 'credentials/token.json';
 fs.readFile('credentials/credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
     const raw_credentials = JSON.parse(content);
     authorize(raw_credentials).then(credentials=>{
         docs.authenticate(credentials);
+        spreadsheets.authenticate(credentials);
         Main();
     });
 });
@@ -54,7 +60,6 @@ function getNewToken(oAuth2Client) {
     });
 }
 
-
 async function Main(){
     const test_docs = [
         '1MossjVGFlmq6kur6RV3DVCUfAIwxtThq0OqoWuFJUpA',
@@ -68,6 +73,8 @@ async function Main(){
     docs.append(test_docs[1],`Abstraction worked!!`).then(()=>{
         console.log('Append text operation successful!');
     });
+    const sheet = await spreadsheets.overview('1NQlLfZWi9sbL4Phy-43ebkr9tKAJlmIF6zoLC4n4Qhs');
+    console.log('Got sheet:',sheet);
     console.log('Got titles:',titles);
 }
 
