@@ -1,18 +1,21 @@
 const {google} = require('googleapis');
-const basics = {
-    getDocTitle : function(auth,docID){
-        const docs = google.docs({version: 'v1', auth});
+const docs = {
+    credentials : undefined,
+    docs : undefined,
+    authenticate : function(credentials){
+        this.docs = google.docs({version: 'v1', auth : credentials});
+    },
+    getDocTitle : function(docID){
         return new Promise((resolve, reject) => {
-            docs.documents.get({documentId: docID}, (err, res) => {
+            this.docs.documents.get({documentId: docID}, (err, res) => {
                 if (err) reject('The API returned an error: ' + err);
                 resolve(res.data.title);
             });
         });
     },
-    append : function(auth,docID,text){
-        const docs = google.docs({version: 'v1', auth});
+    append : function(docID,text){
         return new Promise((resolve, reject) => {
-            docs.documents.batchUpdate(
+            this.docs.documents.batchUpdate(
                 {
                     "documentId": docID,
                     "resource":{
@@ -34,5 +37,5 @@ const basics = {
         });
     }
 };
-module.exports = basics;
+module.exports = docs;
 

@@ -1,14 +1,15 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
-const docs = require('./docs/basics');
+const docs = require('./GoogleDocs/docs');
 const SCOPES = ['https://www.googleapis.com/auth/documents'];
 const TOKEN_PATH = 'credentials/token.json';
 fs.readFile('credentials/credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
     const raw_credentials = JSON.parse(content);
     authorize(raw_credentials).then(credentials=>{
-        Main(credentials);
+        docs.authenticate(credentials);
+        Main();
     });
 });
 function authorize(credentials) {
@@ -52,7 +53,9 @@ function getNewToken(oAuth2Client) {
         });
     });
 }
-async function Main(credentials){
+
+
+async function Main(){
     const test_docs = [
         '1MossjVGFlmq6kur6RV3DVCUfAIwxtThq0OqoWuFJUpA',
         '1A4jsyrG_IrNxzpZMJFf18wJCk_WLFLSNyFX22kF3dpU',
@@ -60,9 +63,9 @@ async function Main(credentials){
     ];
     const titles = [];
     for (const test of test_docs) {
-        titles.push(await docs.getDocTitle(credentials,test));
+        titles.push(await docs.getDocTitle(test));
     }
-    docs.append(credentials,test_docs[1],`Hello again! Got doc title: ${titles[1]}`).then(()=>{
+    docs.append(test_docs[1],`Abstraction worked!!`).then(()=>{
         console.log('Append text operation successful!');
     });
     console.log('Got titles:',titles);
