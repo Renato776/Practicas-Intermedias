@@ -1,0 +1,15 @@
+{
+  "name": "practicas_intermedias",
+  "version": "1.0.0",
+  "description": "Node Project meant to provide an abstraction to Google's Authorization process to work with their apis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "keywords": [],
+  "author": "Renato Flores",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^58.0.0"
+  }
+}
