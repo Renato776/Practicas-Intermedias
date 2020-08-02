@@ -9,6 +9,8 @@ const SCOPES = [
 ];
 // Visit https://developers.google.com/identity/protocols/oauth2/scopes for a full list of possible scopes.
 const TOKEN_PATH = 'credentials/token.json';
+//console.log(`A1:${spreadsheets.toA1Notation(3-1)}1`);
+//process.exit(0);
 fs.readFile('credentials/credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
     const raw_credentials = JSON.parse(content);
@@ -61,6 +63,7 @@ function getNewToken(oAuth2Client) {
 }
 
 async function Main(){
+    /*
     const test_docs = [
         '1MossjVGFlmq6kur6RV3DVCUfAIwxtThq0OqoWuFJUpA',
         '1A4jsyrG_IrNxzpZMJFf18wJCk_WLFLSNyFX22kF3dpU',
@@ -73,9 +76,13 @@ async function Main(){
     docs.append(test_docs[1],`Abstraction worked!!`).then(()=>{
         console.log('Append text operation successful!');
     });
-    const sheet = await spreadsheets.overview('1NQlLfZWi9sbL4Phy-43ebkr9tKAJlmIF6zoLC4n4Qhs');
-    console.log('Got sheet:',sheet);
-    console.log('Got titles:',titles);
+    **/
+    const testSheet = '1RYOoygJR2pkCtWUsVMzNeS8aQgyzdgF9Obx87KKRIdw';
+    const table = new spreadsheets.table('age','name','score');
+    await table.connect(testSheet);
+    await table.fetch();
+    console.log(table.toSQL());
+
 }
 
 
