@@ -9,8 +9,7 @@ const SCOPES = [
 ];
 // Visit https://developers.google.com/identity/protocols/oauth2/scopes for a full list of possible scopes.
 const TOKEN_PATH = 'credentials/token.json';
-//console.log(`A1:${spreadsheets.toA1Notation(3-1)}1`);
-//process.exit(0);
+
 fs.readFile('credentials/credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
     const raw_credentials = JSON.parse(content);
@@ -77,12 +76,12 @@ async function Main(){
         console.log('Append text operation successful!');
     });
     **/
-    const testSheet = '1RYOoygJR2pkCtWUsVMzNeS8aQgyzdgF9Obx87KKRIdw';
-    const table = new spreadsheets.table('age','name','score');
-    await table.connect(testSheet);
+    const table = new spreadsheets.table('name','score','age');
+    await table.connect('https://docs.google.com/spreadsheets/d/1772D-LsrgvaB3zSmOXk087op2RNJQy9Cc4GpHcyER34/edit#gid=448958861');
     await table.fetch();
+    table.rows[table.rows.length-1] = {name : 'An actual name', score : 100, age:24};
+    await table.save();
     console.log(table.toSQL());
-
 }
 
 
