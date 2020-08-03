@@ -19,7 +19,7 @@ const spreadsheets = {
             }
         }
         this.connect = async function (spreadsheet, sheet){
-            this.spreadsheet = /\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/.test(spreadsheet)?new RegExp("/spreadsheets/d/([a-zA-Z0-9-_]+)").exec(spreadsheet)[1]:spreadsheet;
+            this.spreadsheet = spreadsheets.extractID(spreadsheet);
             this.sheet = sheet;
             const raw_header = await spreadsheets.getData({spreadsheet:this.spreadsheet,sheet:sheet},this.keys.length,1,1);
             if(!raw_header.success)throw `An error occurred fetching spreadsheet: ${this.spreadsheet}.
@@ -174,7 +174,7 @@ const spreadsheets = {
 
         }
         this.set_spreadsheet = function(spreadsheet){
-            this.spreadsheet = /\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/.test(spreadsheet)?new RegExp("/spreadsheets/d/([a-zA-Z0-9-_]+)").exec(spreadsheet)[1]:spreadsheet;
+            this.spreadsheet = spreadsheets.extractID(spreadsheet);
         };
         this.createSheet = function(sheet){
             if(this.spreadsheet=="")throw 'You must connect to an spreadsheet before adding a new sheet to it. You can also use the set_spreadsheet method instead.';
@@ -249,6 +249,9 @@ const spreadsheets = {
         return this;
     },
     sheets : undefined,
+    extractID : function(url){
+        return /\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/.test(url)?new RegExp("/spreadsheets/d/([a-zA-Z0-9-_]+)").exec(url)[1]:url;
+    },
     toA1Notation : function (i){
         i-=1;
         const alphabet = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
@@ -289,6 +292,7 @@ const spreadsheets = {
         });
     },
     overview : function(spreadsheetID){
+        spreadsheetID = spreadsheets.extractID(spreadsheetID);
         return new Promise((resolve, reject) => {
             this.sheets.spreadsheets.get({
                 spreadsheetId: spreadsheetID,
@@ -305,5 +309,4 @@ const spreadsheets = {
         });
     }
 };
-module.exports = spreadsheets;
-
+module.exports = {driver : spreadsheets.sheets, spreadsheets : spreadsheets,table : spreadsheets.table};
