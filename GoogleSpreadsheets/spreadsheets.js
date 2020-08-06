@@ -187,12 +187,7 @@ const spreadsheets = {
                             addSheet: {
                                 properties: {
                                     title: sheet?sheet:DEFAULT_SHEET_NAME,
-                                },
-                                data : [
-                                    {
-                                        rowData : rows
-                                    }
-                                ]
+                                }
                             }
                         }]
                     }
@@ -309,4 +304,4 @@ const spreadsheets = {
         });
     }
 };
-module.exports = {driver : spreadsheets.sheets, spreadsheets : spreadsheets,table : spreadsheets.table};
+module.exports = {getDriver : ()=>spreadsheets.sheets, spreadsheets : spreadsheets,table : spreadsheets.table};

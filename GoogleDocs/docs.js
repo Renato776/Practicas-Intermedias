@@ -2,6 +2,9 @@ const {google} = require('googleapis');
 const docs = {
     credentials : undefined,
     docs : undefined,
+    getDriver : function(){
+        return this.docs;
+    },
     authenticate : function(credentials){
         this.docs = google.docs({version: 'v1', auth : credentials});
     },
