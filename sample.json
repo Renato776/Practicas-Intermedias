@@ -1,0 +1,57 @@
+{
+  "config": {
+    "url": "https://sheets.googleapis.com/v4/spreadsheets/19NV-XzX7KdZd1TfiapXlZGQpjNnLNo4oTe_6jgguIVE/values/A2%3AD501?dateTimeRenderOption=FORMATTED_STRING&majorDimension=ROWS&valueRenderOption=FORMATTED_VALUE",
+    "method": "GET",
+    "userAgentDirectives": [
+      {
+        "product": "google-api-nodejs-client",
+        "version": "4.4.0",
+        "comment": "gzip"
+      }
+    ],
+    "headers": {
+      "x-goog-api-client": "gdcl/4.4.0 gl-node/10.19.0 auth/6.0.6",
+      "Accept-Encoding": "gzip",
+      "User-Agent": "google-api-nodejs-client/4.4.0 (gzip)",
+      "Authorization": "Bearer ya29.a0AfH6SMAZeb-ce_6JpgiOjud3aI6QcMagwJDZd_afGASEelB7wCusH3B1arwu3AbEc_844Fz9eQhNIXUuCq-AjUVdIMhvhbb8tIgxkIO6t0rlQdJd8NxI30ByX2u0tg3-t8BtI92n-j-YQQm4lMOpLZrT7CGMChgzSqTqIw",
+      "Accept": "application/json"
+    },
+    "params": {
+      "dateTimeRenderOption": "FORMATTED_STRING",
+      "majorDimension": "ROWS",
+      "valueRenderOption": "FORMATTED_VALUE"
+    },
+    "retry": true,
+    "responseType": "json"
+  },
+  "data": {
+    "range": "'Hoja 1'!A2:D501",
+    "majorDimension": "ROWS",
+    "values": [
+      ["2013045278", "Ana Elizabeth", "IPC1", "13"],
+      ["201502458", "Choco Max", "Practicas Intermedias", "55"],
+      ["2013045278", "Ana Elizabeth", "IPC1", "13"],
+      ["201502458", "Choco Max", "Practicas Intermedias", "55"],
+      ["2013045278", "Ana Elizabeth", "IPC1", "13"],
+      ["245112", "Alex Flores", "IPC2", "22"]
+    ]
+  },
+  "headers": {
+    "alt-svc": "h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"",
+    "cache-control": "private",
+    "connection": "close",
+    "content-encoding": "gzip",
+    "content-type": "application/json; charset=UTF-8",
+    "date": "Wed, 09 Sep 2020 19:56:28 GMT",
+    "server": "ESF",
+    "transfer-encoding": "chunked",
+    "vary": "Origin, X-Origin, Referer",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "0"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "request": {
+    "responseURL": "https://sheets.googleapis.com/v4/spreadsheets/19NV-XzX7KdZd1TfiapXlZGQpjNnLNo4oTe_6jgguIVE/values/A2%3AD501?dateTimeRenderOption=FORMATTED_STRING&majorDimension=ROWS&valueRenderOption=FORMATTED_VALUE"
+  }
+}
