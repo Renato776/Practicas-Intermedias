@@ -6,7 +6,7 @@
 - Jorge Luis Salazar Peralta, **201404215**
 - Astrid Edith Hernández González, **201213223**
 - Bryan Eduardo Chacón López, **201504290**
-- Wendy **000000000**
+- Wendy Aracely Chamalé Boch, **201504284**
 - María de Los Angeles Herrera Sumalé, **201504399**
 
 ---
