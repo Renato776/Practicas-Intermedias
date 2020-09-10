@@ -3,3 +3,4 @@ credentials/*
 !credentials/Authenticate.js
 node_modules/
 .idea/
+*.swp
