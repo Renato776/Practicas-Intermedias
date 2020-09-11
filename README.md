@@ -316,12 +316,3 @@ function metodo1(body){
 }
 ```
 
----
-
-## Tipos de objetivos de conversión
-
-1. Destino
-2. Duración
-3. Páginas / Pantallas por sesión
-4. Evento
-
