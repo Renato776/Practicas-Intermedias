@@ -2,12 +2,12 @@
 
 ### Grupo 1
 - Renato Josue Flores Perez, **201709244**
-- Lester Fernando Mazariegos Navarro, **201403610**
 - Jorge Luis Salazar Peralta, **201404215**
-- Astrid Edith Hernández González, **201213223**
+- Lester Fernando Mazariegos Navarro, **201403610**
 - Bryan Eduardo Chacón López, **201504290**
 - Wendy Aracely Chamalé Boch, **201504284**
 - María de Los Angeles Herrera Sumalé, **201504399**
+- Astrid Edith Hernández González, **201213223**
 
 ---
 
@@ -168,12 +168,16 @@ En este caso, la ultima parte <strong>{spreadsheetId}</strong> es un URL paramet
 
 ### Partes de una respuesta
 
+<div style="font-size:0.8em">
+
 - **Config**: contiene metada sobre el tipo de solicitud, el seridor, la version y otra informacion sobre el tipo de solicitud realizada.
 - **Data**: la informacion que solicitamos.
 - **Headers**: headers de la respuesta.
 - **Status**: codigo de estatus de la solicitud. Siempre sera 200 si la solicitud fue exitosa.
 - **StatusText**: Una pequeña descripcion del status de la respuesta. Por lo general es "OK" si todo fue bien.
 - **Request** : Indica el respurce path utilizado para realizar esta request.
+
+</div>
 
 ---
 
@@ -220,6 +224,8 @@ Una API key es la forma mas simple de autenticacion.
 
 ## Lenguajes soportados
 
+<div style="font-size:0.8em">
+
 - Browser Javascript
 - Go
 - Java 
@@ -231,13 +237,15 @@ Una API key es la forma mas simple de autenticacion.
 - Android SDK
 - Objective-C
 
+</div>
+
 |||
 
 ## Service Accounts
 
 ![gsuite](images/gsuite.png)
 
----
+|||
 
 ## Scopes
 
@@ -301,7 +309,7 @@ gAPIinstance = {
 };
 ```
 
----
+|||
 
 ## Callbacks & Promises
 
