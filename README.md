@@ -1,3 +1,28 @@
+# Índice
+- Encabezado
+
++ Índice
+
++ Introducción
+
++ Objetivos
+
+- Actividades con métrica(gráficos generados por ingreso de actividades con notas)
+
+- Actividades sin metrica(Ingreso de actividades descritas por fecha) aplica para todos.
+
+- Estadísticas de deserción(para tutores de cursos).
+
+- Anomalías detectadas(para tutores de cursos).
+
+- Pie del informe
+
++ Conclusiones
+
++ Recomendaciones
+
++ Bibliografía utilizada en el periodo del informe. 
+
 # INTRODUCCIÓN
 La implementación de un sistema de archivos ext2 o ext3 es un proyecto muy interesante y revelador para el estudiante, ya que este tiene
 la oportunidad de no solo saber teóricamente como se almacenan los archivos a bajo nivel, sino también la experiencia de implementarlo ellos
@@ -57,7 +82,7 @@ respuesta oficial aún.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
-# CONCLUSIONES
+# Conclusiones
 
 1. Los conceptos proporcionados han ayudado a los estudiantes en la realización del proyecto 1.
 
@@ -68,7 +93,7 @@ los conceptos vistos en clase a su ritmo.
 
 4. La entrega obligatoria por medio de Github hizo que los estudiantes aprendieran el uso de Git para el versionamiento y control de su proyecto.
 
-# RECOMENDACIONES
+# Recomendaciones
 
 1. Reforzar el uso y la importancia de herramientas y lenguajes de bajo nivel en cursos donde estos tienen relevancia.
 
@@ -77,3 +102,7 @@ los conceptos vistos en clase a su ritmo.
 3. Incorporar el uso de herramientas de control de versiones en diversos cursos para adentrar al estudiante al uso de las mismas.
 
 4. Disminuir la dependencia de los estudiantes hacia librerías externas cuando estas no son justificadas.
+
+# Bibliografía
+
+- Loomis, Mary E.S. (1,989) Estructuras de datos y Organización de archivos (Segunda Edición). Editorial Prentice Hall.
